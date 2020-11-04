@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/athensGray"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/imageProfile"
+    android:layout_width="142dp"
+    android:layout_height="142dp"
+    android:layout_marginTop="@dimen/default_padding_margin_xx"
+    android:padding="@dimen/default_padding_margin_x"
+    android:src="@drawable/ic_people"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/textTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_padding_margin_h"
+    android:text="admin"
+    android:textColor="@color/black"
+    android:textAlignment="center"
+    android:textSize="22sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toBottomOf="@id/imageProfile"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/textSubTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_padding_margin"
+    android:text="Administrator"
+    android:textColor="@color/black"
+    android:textAlignment="center"
+    android:textSize="18sp"
+    app:layout_constraintTop_toBottomOf="@id/textTitle"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/buttonLogout"
+    style="@style/PrimaryButton"
+    android:layout_marginBottom="@dimen/default_padding_margin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/redOrange50"
+    android:text="Keluarkan Akun"
+    android:layout_marginEnd="@dimen/default_padding_margin"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:textColor="@color/white"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

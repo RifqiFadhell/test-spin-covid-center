@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/athensGray"
+  app:layout_constraintBottom_toBottomOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintStart_toStartOf="parent"
+  app:layout_constraintTop_toTopOf="parent">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@color/primary"
+      app:layout_constraintBottom_toBottomOf="@id/textTitleDate"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginStart="@dimen/default_padding_margin_x"
+      android:layout_marginTop="@dimen/default_padding_margin_h"
+      android:layout_marginEnd="@dimen/default_padding_margin_x"
+      android:background="@drawable/background_progress_dialog"
+      app:layout_constraintBottom_toBottomOf="@id/layoutFilter"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/editSearch"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/default_padding_margin_x"
+      android:layout_marginTop="@dimen/default_padding_margin_h"
+      android:layout_marginEnd="@dimen/default_padding_margin_x"
+      android:background="@android:color/transparent"
+      android:cursorVisible="false"
+      android:drawableStart="@drawable/ic_search"
+      android:drawablePadding="@dimen/default_padding_margin"
+      android:hint="Search"
+      android:imeOptions="actionDone"
+      android:paddingStart="@dimen/default_padding_margin"
+      android:paddingTop="@dimen/default_padding_margin"
+      android:paddingEnd="@dimen/default_padding_margin"
+      android:paddingBottom="@dimen/default_padding_margin"
+      android:singleLine="true"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/layoutFilter"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/default_padding_margin_x"
+      android:layout_marginEnd="@dimen/default_padding_margin_x"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/editSearch">
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonSortName"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/default_padding_margin_x"
+        android:drawableEnd="@drawable/ic_sort_name_atoz"
+        android:drawablePadding="@dimen/default_padding_margin_small"
+        android:text="Sort by"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/buttonSortNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonSortNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/default_padding_margin_xx"
+        android:layout_marginEnd="@dimen/default_padding_margin_x"
+        android:drawableEnd="@drawable/ic_sort_number_low"
+        android:drawablePadding="@dimen/default_padding_margin_small"
+        android:text="Sort by"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonSortName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <Spinner
+        android:id="@+id/spinnerProvince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_padding_margin_small"
+        android:gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSortName" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:text="Filter Provinsi"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerProvince"
+        app:layout_constraintEnd_toEndOf="@id/spinnerProvince"
+        app:layout_constraintStart_toStartOf="@id/spinnerProvince"
+        app:layout_constraintTop_toTopOf="@id/spinnerProvince" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/buttonFilter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/default_padding_margin"
+      android:background="@android:color/transparent"
+      android:padding="@dimen/default_padding_margin"
+      android:src="@drawable/ic_filter"
+      app:layout_constraintBottom_toBottomOf="@id/editSearch"
+      app:layout_constraintEnd_toEndOf="@id/editSearch"
+      app:layout_constraintTop_toTopOf="@id/editSearch" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textTitleDate"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin_h"
+      android:layout_marginEnd="@dimen/default_padding_margin_x"
+      android:paddingBottom="@dimen/default_padding_margin"
+      android:text="Senin, 03 November 2020"
+      android:textColor="@color/white"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/layoutFilter" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+      android:id="@+id/swipeRefresh"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/textTitleDate">
+
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="@dimen/default_padding_margin">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:background="@color/primary"
+          app:layout_constraintBottom_toTopOf="@+id/textTitle"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+          android:id="@+id/card"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/default_padding_margin_x"
+          android:layout_marginTop="@dimen/default_padding_margin"
+          android:layout_marginEnd="@dimen/default_padding_margin_x"
+          android:background="@color/white"
+          android:visibility="visible"
+          app:cardCornerRadius="8dp"
+          app:cardElevation="2dp"
+          app:cardUseCompatPadding="true"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textTitlePositive"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:text="Total Positif Covid-19"
+              android:textAlignment="textEnd"
+              android:textColor="@color/black"
+              android:textSize="16sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imagePositive"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/imagePositive"
+              android:layout_width="64dp"
+              android:layout_height="64dp"
+              android:layout_marginStart="@dimen/default_padding_margin"
+              android:src="@drawable/ic_positive_case"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textPositive"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:layout_marginBottom="@dimen/default_padding_margin"
+              android:gravity="center"
+              android:text="1230000"
+              android:textColor="@color/redOrange30"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/textTitlePositive" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+          android:id="@+id/cardDeath"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/default_padding_margin_x"
+          android:layout_marginTop="@dimen/default_padding_margin_small"
+          android:background="@color/white"
+          android:visibility="visible"
+          app:cardCornerRadius="8dp"
+          app:cardElevation="2dp"
+          app:cardUseCompatPadding="true"
+          app:layout_constraintEnd_toStartOf="@id/cardHealth"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/card"
+          app:layout_constraintVertical_chainStyle="packed">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDeath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textTitleDeath"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:lines="1"
+              android:text="Total Meninggal"
+              android:textAlignment="textEnd"
+              android:textColor="@color/black"
+              android:textSize="13sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imageDeath"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/imageDeath"
+              android:layout_width="48dp"
+              android:layout_height="48dp"
+              android:layout_marginStart="@dimen/default_padding_margin"
+              android:layout_marginTop="@dimen/default_padding_margin_small"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:src="@drawable/ic_death"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textDeath"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:layout_marginBottom="@dimen/default_padding_margin"
+              android:lines="1"
+              android:text="1230000"
+              android:textAlignment="textEnd"
+              android:textColor="@color/black"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imageDeath"
+              app:layout_constraintTop_toBottomOf="@id/textTitleDeath" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+          android:id="@+id/cardHealth"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/default_padding_margin_small"
+          android:layout_marginEnd="@dimen/default_padding_margin_x"
+          android:background="@color/white"
+          android:visibility="visible"
+          app:cardCornerRadius="8dp"
+          app:cardElevation="2dp"
+          app:cardUseCompatPadding="true"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@id/cardDeath"
+          app:layout_constraintTop_toBottomOf="@id/card">
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textTitleHealth"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:lines="1"
+              android:text="Total Sembuh"
+              android:textAlignment="textEnd"
+              android:textColor="@color/black"
+              android:textSize="13sp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imageHealth"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/imageHealth"
+              android:layout_width="48dp"
+              android:layout_height="48dp"
+              android:layout_marginStart="@dimen/default_padding_margin"
+              android:layout_marginTop="@dimen/default_padding_margin_small"
+              android:src="@drawable/ic_healty"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toStartOf="@id/textHealth"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/textHealth"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/default_padding_margin"
+              android:layout_marginEnd="@dimen/default_padding_margin"
+              android:layout_marginBottom="@dimen/default_padding_margin"
+              android:lines="1"
+              android:text="1230000"
+              android:textAlignment="textEnd"
+              android:textColor="@color/emerald"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imageHealth"
+              app:layout_constraintTop_toBottomOf="@id/textTitleHealth" />
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+          android:layout_width="0dp"
+          android:layout_height="0dp"
+          android:background="@color/white"
+          app:layout_constraintBottom_toBottomOf="@id/textInformation"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@id/textTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/textTitle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/default_padding_margin"
+          android:padding="@dimen/default_padding_margin"
+          android:paddingStart="@dimen/default_padding_margin_xh"
+          android:text="Sebaran Kasus Per-Provinsi"
+          android:textSize="20sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/cardDeath" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/textInformation"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/default_padding_margin_xh"
+          android:layout_marginEnd="@dimen/default_padding_margin"
+          android:text="@string/information_color"
+          android:textSize="11sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/listProvince"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/default_padding_margin_small"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/textInformation" />
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

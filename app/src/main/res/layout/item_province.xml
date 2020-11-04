@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/card"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginStart="@dimen/default_padding_margin"
+  android:layout_marginTop="@dimen/default_padding_margin"
+  android:layout_marginEnd="@dimen/default_padding_margin"
+  app:cardCornerRadius="8dp"
+  app:cardElevation="2dp">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <View
+      android:id="@+id/line"
+      android:layout_width="10dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textProvince"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/default_padding_margin"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:textColor="@color/black"
+      android:textSize="20sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/line"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Jakarta" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textTitlePositive"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:text="Positif"
+      android:textColor="@color/redOrange30"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toStartOf="@id/textTitleDeath"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toEndOf="@id/line"
+      app:layout_constraintTop_toBottomOf="@id/textProvince" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textTitleDeath"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:text="Meninggal"
+      android:textColor="@color/black"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toStartOf="@id/textTitleHealth"
+      app:layout_constraintStart_toEndOf="@id/textTitlePositive"
+      app:layout_constraintTop_toBottomOf="@id/textProvince" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textTitleHealth"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:text="Sembuh"
+      android:textColor="@color/emerald"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/textTitleDeath"
+      app:layout_constraintTop_toBottomOf="@id/textProvince" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textPositive"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:layout_marginBottom="@dimen/default_padding_margin"
+      android:text="-"
+      android:textAlignment="center"
+      android:textColor="@color/redOrange30"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/textDeath"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toEndOf="@id/line"
+      app:layout_constraintTop_toBottomOf="@id/textTitlePositive" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textDeath"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:layout_marginBottom="@dimen/default_padding_margin"
+      android:text="-"
+      android:textColor="@color/black"
+      android:textAlignment="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/textHealth"
+      app:layout_constraintStart_toEndOf="@id/textPositive"
+      app:layout_constraintTop_toBottomOf="@id/textTitlePositive" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/textHealth"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/default_padding_margin"
+      android:layout_marginBottom="@dimen/default_padding_margin"
+      android:text="-"
+      android:textColor="@color/emerald"
+      android:textAlignment="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/textDeath"
+      app:layout_constraintTop_toBottomOf="@id/textTitlePositive" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

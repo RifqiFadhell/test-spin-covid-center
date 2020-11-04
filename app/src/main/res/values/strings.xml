@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">Covid Center</string>
+  <string name="information_color">*warna hijau kasus dibawah 10 Ribu / merah kasus diatas 10 Ribu</string>
+</resources>
