@@ -106,6 +106,7 @@ class DashboardFragment : Fragment(), DashboardContract.View {
         }
     }
 
+    /*this is for filtering words*/
     private fun filter(text: String) {
         val temp: MutableList<FeaturesItem> = ArrayList()
         for (x in listDataProvince) {
@@ -134,9 +135,7 @@ class DashboardFragment : Fragment(), DashboardContract.View {
                     filter(dataProvince[position].nama.toString())
                 }
 
-                override fun onNothingSelected(p0: AdapterView<*>?) {
-
-                }
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
             }
     }
 
@@ -181,6 +180,7 @@ class DashboardFragment : Fragment(), DashboardContract.View {
         hideDialog()
     }
 
+    /*this is for count data*/
     private fun totalData(data: ArrayList<FeaturesItem>) {
         var totalPositive = 0
         var totalDeath = 0

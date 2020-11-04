@@ -5,6 +5,8 @@ import com.iamhabib.easy_preference.EasyPreference
 
 class DataSaved(val context: Context?) {
 
+    /*this is for data local saved in shared preference*/
+
     companion object {
         private const val TAG_SPLASH = "splash"
         private const val TAG_LOGIN = "login"

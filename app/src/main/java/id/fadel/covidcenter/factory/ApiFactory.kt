@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit
 
 interface ApiFactory {
 
+    /*this is endpoint*/
     @GET("VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json")
     fun getDataCovid(): Observable<DataCovidResponse>
 
@@ -22,13 +23,14 @@ interface ApiFactory {
     companion object {
 
         fun create(): ApiFactory {
-
+            /*this is for add timeout*/
             val okHttpClient = OkHttpClient.Builder()
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build()
 
+            /*this is for connect api*/
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -39,6 +41,7 @@ interface ApiFactory {
             return retrofit.create(ApiFactory::class.java)
         }
 
+        /*this is for connect api*/
         fun createSecond(): ApiFactory {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
